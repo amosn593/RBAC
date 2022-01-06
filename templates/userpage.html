@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content%}
+<div class="container mt-5">
+  <p class="text-center">List Of Sub Users under, {{request.user}}</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in subusers %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content%}
